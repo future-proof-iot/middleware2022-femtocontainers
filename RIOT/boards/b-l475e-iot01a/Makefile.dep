@@ -1,0 +1,12 @@
+ifneq (,$(filter saul_default,$(USEMODULE)))
+  USEMODULE += saul_gpio
+  USEMODULE += hts221
+  USEMODULE += lis3mdl
+  USEMODULE += lps22hb
+  USEMODULE += lsm6dsl
+endif
+
+ifneq (,$(filter periph_spi,$(USEMODULE)))
+  # The LED pin is also used for SPI
+  DISABLE_MODULE += periph_init_led0
+endif

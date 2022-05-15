@@ -1,0 +1,15 @@
+ifneq (,$(filter saul_default,$(USEMODULE)))
+  USEMODULE += saul_adc
+  USEMODULE += saul_gpio
+endif
+
+# default to mtd_mci
+ifneq (,$(filter mtd,$(USEMODULE)))
+  USEMODULE += mtd_mci
+endif
+
+# default to using FAT on the SD card
+ifneq (,$(filter vfs_default,$(USEMODULE)))
+  USEMODULE += fatfs_vfs
+  USEMODULE += mtd
+endif

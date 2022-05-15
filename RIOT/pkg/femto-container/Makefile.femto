@@ -1,0 +1,9 @@
+EXTRA_CFLAGS += -Wno-format-nonliteral -Wno-override-init -Wno-pedantic -foptimize-sibling-calls
+CFLAGS += $(EXTRA_CFLAGS)
+NO_AUTO_SRC := 1
+SRC += bpf.c
+SRC += verify.c
+SRC += jumptable.c
+
+include $(RIOTBASE)/Makefile.base
+

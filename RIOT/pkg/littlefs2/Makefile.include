@@ -1,0 +1,11 @@
+INCLUDES += -I$(PKGDIRBASE)/littlefs2
+
+ifneq (,$(filter littlefs2_fs,$(USEMODULE)))
+  DIRS += $(RIOTBASE)/pkg/littlefs2/fs
+endif
+
+# Reduce LFS_NAME_MAX to 31 (as VFS_NAME_MAX default)
+CFLAGS += -DLFS_NAME_MAX=31
+
+# avoid compilation errors when NDEBUG is defined
+CFLAGS += -DLFS_NO_ASSERT

@@ -1,0 +1,3 @@
+USEMODULE += ztimer_msec
+USEMODULE += checksum
+FEATURES_REQUIRED += periph_i2c
