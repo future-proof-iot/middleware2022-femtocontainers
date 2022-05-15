@@ -1,0 +1,13 @@
+INSTALLDEFAULTROOT = comm
+-R comm bpf.comm
+-R dxcomm bpf.dxcomm
+-R model bpf.model
+-R equivalence bpf.equivalence
+-R monadicmodel bpf.monadicmodel
+-R simulation bpf.simulation
+-R isolation bpf.isolation
+-R dxmodel bpf.dxmodel
+-R /home/shyuan/.opam/4.11.1/lib/coq-variant/compcert32/compcert compcert
+-R clightlogic bpf.clightlogic
+-R clight bpf.clight
+-R verifier bpf.verifier
