@@ -1,6 +1,6 @@
-# Middleware 2022 Femto-Container artefact
+# Middleware 2022 Femto-Container artifact
 
-This repository contains the artefact for the submission to [Middleware 2022]
+This repository contains the artifact for the submission to [Middleware 2022]
 on "Femto-Containers: Lightweight Virtualization and Fault Isolation For Small
 Software Functions on Low-Power IoT Microcontrollers".
 
