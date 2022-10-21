@@ -75,5 +75,11 @@ for details on how to work with this example.
 The `bench_bpf_unit` example is a unit test for the different eBPF instructions
 that can be run on the different runtimes.
 
+### CertFC
+
+The CertFC with the accompanying benchmark tests are in the `verified` directory.
+Installation instructions are provided separately in the [INSTALL.md] file and
+details provide in the README.md file in the `verified` directory.
 
 [Middleware 2022]: https://middleware-conf.github.io/2022/
+[INSTALL.md]: https://github.com/future-proof-iot/middleware2022-femtocontainers/blob/main/verified/INSTALL.md
