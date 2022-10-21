@@ -32,7 +32,7 @@ Table of Contents:
 
 - Install aiocoap from the source
 
-      $ pip3 install --user aiocoap[linkheader]>=0.4.1
+      $ pip3 install --user aiocoap[all]
 
   See the [aiocoap installation instructions](https://aiocoap.readthedocs.io/en/latest/installation.html)
   for more details.
@@ -42,11 +42,6 @@ Table of Contents:
   The aiocoap tools are installed to `~/.local/bin`. Either add
   "export `PATH=$PATH:~/.local/bin"` to your `~/.profile` and re-login, or execute
   that command *in every shell you use for this tutorial*.
-
-- Clone this repository:
-
-      $ git clone https://github.com/RIOT-OS/RIOT
-      $ cd RIOT
 
 ### Key Management
 [key-management]: #Key-management
