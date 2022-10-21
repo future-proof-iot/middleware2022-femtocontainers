@@ -10,6 +10,8 @@ Makefile.
 
 ## Compiling and Running the example
 
+### Running directly on Linux
+
 Compiling this example can be done via
 
 ```Console
@@ -86,6 +88,10 @@ native: exiting
 As the instance is running on a unconstrained Linux computer the performance
 benchmarks will be multiple times faster than on an embedded target.
 
+### Running on a target board
+
+The `BOARD` variable can be supplied with the `make` command to adjust the
+target of the compilation.
 To compile for an embedded target supported by RIOT, for example the
 [nRF52840 development kit](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK),
 the following can be run:

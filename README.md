@@ -73,7 +73,8 @@ for details on how to work with this example.
 #### Bench BPF Unit
 
 The `bench_bpf_unit` example is a unit test for the different eBPF instructions
-that can be run on the different runtimes.
+that can be run on the different runtimes. The README.md with the example has
+additional details on how to compile and what output is expected.
 
 ### CertFC
 
