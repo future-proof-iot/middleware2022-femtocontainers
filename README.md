@@ -44,6 +44,12 @@ Furthermore the following tools are required:
 * python3
 * pyserial (linux distro package often named python3-serial or py3-serial)
 
+These can be installed on Debian and Ubuntu via
+
+```Console
+# apt install gcc-multilib build-essential git llvm clang python3 python3-pip wget curl unzip
+```
+
 For compiling Femto-Container applications and updating them over the air,
 the following is required:
 

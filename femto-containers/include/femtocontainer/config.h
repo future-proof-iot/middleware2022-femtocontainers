@@ -25,6 +25,8 @@ static inline f12r_call_t f12r_get_external_call(uint32_t num)
     (void)num;
     return NULL;
 }
+#else
+f12r_call_t f12r_get_external_call(uint32_t num);
 #endif
 
 #endif /* FEMTOCONTAINER_CONFIG_H */

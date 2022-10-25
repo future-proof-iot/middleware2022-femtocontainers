@@ -30,9 +30,9 @@ Table of Contents:
 
       $ pip3 install --user cbor2 cryptography pyelftools
 
-- Install aiocoap from the source
+- Install aiocoap and linkheader
 
-      $ pip3 install --user aiocoap[all]
+      $ pip3 install --user linkheader aiocoap[all]
 
   See the [aiocoap installation instructions](https://aiocoap.readthedocs.io/en/latest/installation.html)
   for more details.
@@ -166,6 +166,7 @@ retrieve the manifest and payload. The `aiocoap-fileserver` is used for this,
 hosting files under the `coaproot` directory:
 
 ```console
+$ mkdir coaproot
 $ aiocoap-fileserver coaproot
 ```
 
@@ -179,13 +180,13 @@ Before the natice instance can be started, it must be compiled first.
 Compilation can be started from the root of your RIOT directory with:
 
 ```
-$ make -C suit_femtocontainer
+$ make -C examples/suit_femtocontainer
 ```
 
 Then start the example with:
 
 ```console
-$ make -C suit_femtocontainer term
+$ make -C examples/suit_femtocontainer term
 ```
 
 This starts an instance of the suit_update example as a process on your
@@ -239,8 +240,8 @@ To update the storage location we first need the Femto-Container payload
 application:
 
 ```console
-$ make -C suit_femtocontainer/bpf
-$ cp suit_femtocontainer/bpf/temp_sens.bin
+$ make -C examples/suit_femtocontainer/bpf
+$ cp examples/suit_femtocontainer/bpf/temp_sens.bin coaproot
 ```
 
 Make sure to store it in the directory selected for the CoAP file server.
@@ -250,7 +251,7 @@ acts as a template for the real SUIT manifest. Within RIOT, the script
 `dist/tools/suit/gen_manifest.py` is used.
 
 ```console
-$ dist/tools/suit/gen_manifest.py --urlroot coap://[2001:db8::1]/ --seqnr 1 -o suit.tmp coaproot/temp_sens.bin:0:ram:0
+$ RIOT/dist/tools/suit/gen_manifest.py --urlroot coap://[2001:db8::1]/ --seqnr 1 -o suit.tmp coaproot/temp_sens.bin:0:ram:0
 ```
 
 This generates a suit manifest template with the sequence number set to `1`, a
@@ -305,14 +306,14 @@ the node to reboot after applying the update.
 Generating the actual SUIT manifest from this is done with:
 
 ```console
-$ dist/tools/suit/suit-manifest-generator/bin/suit-tool create -f suit -i suit.tmp -o coaproot/suit_manifest
+$ RIOT/dist/tools/suit/suit-manifest-generator/bin/suit-tool create -f suit -i suit.tmp -o coaproot/suit_manifest
 ```
 
 This generates the manifest in SUIT CBOR format. The content can be inspected by
 using the `parse` subcommand:
 
 ```console
-$ dist/tools/suit/suit-manifest-generator/bin/suit-tool parse -m coaproot/suit_manifest
+$ RIOT/dist/tools/suit/suit-manifest-generator/bin/suit-tool parse -m coaproot/suit_manifest
 ```
 
 The manifest generated doesn't have an authentication wrapper, it is unsigned
@@ -320,7 +321,7 @@ and will not pass inspection on the device or RIOT instance. The manifest can be
 signed with the `sign` subcommand together with the keys generated earlier.
 
 ```console
-$ dist/tools/suit/suit-manifest-generator/bin/suit-tool sign -k keys/default.pem -m coaproot/suit_manifest -o coaproot/suit_manifest.signed
+$ dist/tools/suit/suit-manifest-generator/bin/suit-tool sign -k RIOT/keys/default.pem -m coaproot/suit_manifest -o coaproot/suit_manifest.signed
 ```
 
 This generates an authentication to the manifest. This is visible when
@@ -339,7 +340,7 @@ command sequences in the manifest and download the payload when instructed to.
 The URL for the manifest can be supplied to the instance via the command line.
 
 ```console
-> suit coap://[2001:db8::1]/suit_manifest.signed
+> suit fetch coap://[2001:db8::1]/suit_manifest.signed
 ```
 
 The payload is the full URL to the signed manifest. The native instance should

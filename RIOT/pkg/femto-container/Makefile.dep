@@ -1,1 +1,1 @@
-#USEMODULE += femto-container_contrib
+USEMODULE += femto-container_contrib

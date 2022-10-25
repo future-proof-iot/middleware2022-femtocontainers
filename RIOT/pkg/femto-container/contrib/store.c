@@ -14,6 +14,7 @@
 #include "bpf/store.h"
 #include "memarray.h"
 
+#if 0
 static btree_t _global;
 
 /* Singleton mem array */
@@ -86,3 +87,4 @@ void bpf_store_iter_global(btree_cb_t cb, void *ctx)
 {
     btree_traverse(&_global, cb, ctx);
 }
+#endif

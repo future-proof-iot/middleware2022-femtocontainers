@@ -31,6 +31,7 @@ USEMODULE += bpf
 USEPKG += femto-container
 
 USEMODULE += saul
+USEMODULE += saul_reg
 USEMODULE += saul_default
 
 
