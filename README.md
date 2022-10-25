@@ -54,11 +54,12 @@ the following is required:
 * [cbor2](https://pypi.org/project/cbor2/)
 * [cryptography](https://pypi.org/project/cryptography/)
 * [aiocoap](https://pypi.org/project/aiocoap/)
+* [linkheader](https://pypi.org/project/linkheader/)
 
 These last four can be installed via Pip using
 
 ```Console
-$ pip install --user pyelftools cbor2 cryptography aiocoap[all]
+$ pip install --user pyelftools cbor2 cryptography aiocoap[all] linkheader
 ```
 
 ### Examples
