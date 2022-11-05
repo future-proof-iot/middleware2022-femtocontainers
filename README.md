@@ -1,8 +1,8 @@
 # Middleware 2022 Femto-Container artifact
 
-This repository contains the artifact for the submission to [Middleware 2022]
+This repository contains the artifact for the paper published at [ACM Middleware 2022]
 on "Femto-Containers: Lightweight Virtualization and Fault Isolation For Small
-Software Functions on Low-Power IoT Microcontrollers".
+Software Functions on Low-Power IoT Microcontrollers", for which you can also check out the [preprint] in PDF.
 
 ## Directory overview
 
@@ -89,5 +89,6 @@ The CertFC with the accompanying benchmark tests are in the `verified` directory
 Installation instructions are provided separately in the [INSTALL.md] file and
 details provide in the README.md file in the `verified` directory.
 
-[Middleware 2022]: https://middleware-conf.github.io/2022/
+[ACM Middleware 2022]: https://middleware-conf.github.io/2022/
 [INSTALL.md]: https://github.com/future-proof-iot/middleware2022-femtocontainers/blob/main/verified/INSTALL.md
+[preprint]: https://arxiv.org/pdf/2210.03432.pdf
